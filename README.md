@@ -16,7 +16,7 @@ No React, Node.js, npm or build step is used: it is plain HTML, CSS and JavaScri
 | Path | Purpose |
 | --- | --- |
 | `index.html` | Portal home page (wording and layout) |
-| `styles.css` | Look and feel. Navy/teal colours are at the top (`:root`) |
+| `styles.css` | Look and feel. SP red/charcoal colours are at the top (`:root`) |
 | `app.js` | Loads `data/content.json`, search, filters and the post form |
 | `data/content.json` | **All cards** (handbook, courses, practices, opportunities) |
 | `handbook/index.html` | CET Handbook landing page |
