@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Prototype for submitting course documents for approval in the SP CET Portal. Sample workflow only.">
+<title>Course Applications – SP CET Portal</title>
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to main content</a>
+
+<!--
+  =====================================================================
+  HOW TO UPDATE THIS PAGE (for non-programmers)
+  - Required documents, schools and course types: edit data/applications.json
+  - Sample applications shown on first load:        edit data/applications.json
+  - Page wording:                                   edit this file
+  This is a PROTOTYPE. Nothing is sent to SP systems and there is no login.
+  =====================================================================
+-->
+
+<header>
+  <div class="top">
+    <a class="brand" href="../index.html"><span class="sr-only">SP CET Portal home</span><span aria-hidden="true">SP <span>CET</span> Portal</span></a>
+    <nav id="siteNav" aria-label="Main">
+      <a href="../index.html">Portal home</a>
+      <a href="../index.html#resources">Resources</a>
+      <a href="../handbook/index.html">Handbook</a>
+      <a href="index.html" aria-current="page">Applications</a>
+    </nav>
+    <button type="button" class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="siteNav">Menu</button>
+  </div>
+</header>
+
+<section class="page-hero" aria-labelledby="pageTitle">
+  <div class="hero-inner">
+    <div class="eyebrow">Course document applications</div>
+    <h1 id="pageTitle">Submit and approve course documents</h1>
+    <p>Schools submit course documents for review. Approvers approve, return for changes or reject, with a full history on each application.</p>
+  </div>
+</section>
+
+<main id="main">
+  <p class="notice"><strong>Prototype only.</strong> Applications and decisions are stored in this browser only. Files are <em>not</em> uploaded (only file names are recorded), there is no login, and the “Viewing as” switch is a demonstration, not real access control. Do not enter personal or restricted information.</p>
+
+  <div class="role-bar">
+    <label for="role">Viewing as</label>
+    <select id="role"><option value="submitter">Submitter (school)</option><option value="approver">Approver (CET office)</option></select>
+    <button type="button" class="secondary" id="resetBtn">Reset demo data</button>
+  </div>
+
+  <ul class="stats" id="appStats" aria-label="Application counts (sample)"></ul>
+
+  <section id="submit" aria-labelledby="subHead">
+    <div class="section-head"><div><h2 id="subHead">New application</h2><p>Complete the details and attach the required documents.</p></div></div>
+    <form class="app-form" id="appForm" novalidate>
+      <div class="form-grid">
+        <div><label for="fTitle">Course title</label><input id="fTitle" required maxlength="120" placeholder="e.g. Applied Data Analytics"></div>
+        <div><label for="fType">Course type</label><select id="fType"></select></div>
+        <div><label for="fSchool">School</label><select id="fSchool"></select></div>
+        <div><label for="fBy">Submitted by (role, not personal name)</label><input id="fBy" required maxlength="80" placeholder="e.g. Course Manager"></div>
+      </div>
+      <label for="fSummary">Summary</label>
+      <textarea id="fSummary" required maxlength="500" placeholder="Briefly describe the course, intended learners and what you are seeking approval for"></textarea>
+      <fieldset class="docs"><legend>Documents (PDF, Word, Excel or PowerPoint, up to 10 MB)</legend><div id="docFields"></div></fieldset>
+      <p class="form-error" id="appError" role="alert"></p>
+      <div class="actions"><button type="reset" class="secondary">Clear</button><button type="submit" class="primary">Submit for approval</button></div>
+    </form>
+  </section>
+
+  <section id="list" aria-labelledby="listHead">
+    <div class="section-head"><div><h2 id="listHead">Applications</h2><p id="roleHint"></p></div></div>
+    <div class="filters" role="group" aria-label="Filter by status" id="statusFilters"></div>
+    <p class="status" id="appStatus" role="status" aria-live="polite"></p>
+    <div class="app-list" id="appList"><p class="empty">Loading applications…</p></div>
+  </section>
+
+  <a class="back" href="../index.html">← Back to portal home</a>
+</main>
+
+<footer>SP CET Portal working prototype · Sample content only · Not connected to production systems</footer>
+<script src="applications.js"></script>
+</body>
+</html>

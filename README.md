@@ -20,6 +20,8 @@ No React, Node.js, npm or build step is used: it is plain HTML, CSS and JavaScri
 | `app.js` | Loads `data/content.json`, search, filters and the post form |
 | `data/content.json` | **All cards** (handbook, courses, practices, opportunities) |
 | `handbook/index.html` | CET Handbook landing page |
+| `applications/` | Course document application and approval prototype (`index.html`, `applications.js`) |
+| `data/applications.json` | Required documents, schools, course types and sample applications |
 | `assets/` | Images and icons (`favicon.svg`) |
 
 ## Updating content (no programming needed)
@@ -52,6 +54,14 @@ Edit `handbook/index.html`. Comments at the top explain how to add a topic or li
 
 ### Wording and colours
 Headings and text are in `index.html`; colours are in `styles.css`.
+
+## Course document applications and approvals
+`applications/index.html` is a working **prototype** of the workflow: a school submits a course application with its documents, an approver starts a review and then approves, returns it for changes (with a comment) or rejects it, and the school can resubmit. Every step is recorded in the application's history.
+
+- Edit required documents, schools, course types and sample applications in `data/applications.json`.
+- Statuses: Submitted → Under review → Approved / Returned for changes / Rejected (returned applications can be resubmitted).
+- Approval is blocked while a required document is missing; returning or rejecting needs a comment.
+- **Limits of the prototype:** records are saved only in the visitor's browser; files are *not* uploaded (only file names are recorded); there is no login, so the "Viewing as" switch is a demonstration and not access control. A real process needs an approved back-end with SP sign-in, secure file storage and audit logging. Do not enter personal or restricted information.
 
 ## Post form
 "Post opportunity" posts are saved **only in the visitor's own browser** (localStorage) and are labelled "Sample post". They are not shared between users or sent to any SP system. A shared, moderated collaboration space would need an approved back-end service.
