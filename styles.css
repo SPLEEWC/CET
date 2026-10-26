@@ -14,7 +14,7 @@ header{background:var(--ink);color:#fff;position:sticky;top:0;z-index:5}
 .top{max-width:1180px;margin:auto;display:flex;align-items:center;gap:24px;padding:14px 24px}
 .brand{font-weight:800;font-size:20px;color:#fff;text-decoration:none;display:flex;align-items:center;gap:10px}
 .brand span{color:#ff8c97}
-.brand img{width:30px;height:30px}
+
 .top nav{display:flex;gap:20px;margin-left:auto;align-items:center}
 .top nav a{color:#e6e2e2;text-decoration:none;font-size:14px;padding:6px 2px;border-bottom:2px solid transparent}
 .top nav a:hover,.top nav a[aria-current]{color:#fff;border-bottom-color:#ff8c97}
