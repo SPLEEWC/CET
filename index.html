@@ -1,54 +1,114 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Working prototype of the SP CET Portal: one shared hub for CET handbook, courses, best practices and collaboration. Sample content only.">
 <title>SP CET Portal Prototype</title>
-<style>
-:root{--navy:#152941;--teal:#087d7d;--bg:#f4f7f9;--text:#243247;--muted:#667085;--line:#dce3ea;--white:#fff;--orange:#e9812c;--purple:#7554a4}
-*{box-sizing:border-box}body{margin:0;font-family:Arial,"Segoe UI",sans-serif;color:var(--text);background:var(--bg)}
-header{background:var(--navy);color:#fff;position:sticky;top:0;z-index:5}.top{max-width:1180px;margin:auto;display:flex;align-items:center;gap:24px;padding:16px 24px}.brand{font-weight:800;font-size:20px}.brand span{color:#76d0ca}.top nav{display:flex;gap:20px;margin-left:auto}.top a{color:#dfe8f1;text-decoration:none;font-size:14px}.top button,.primary{border:0;border-radius:8px;background:var(--teal);color:#fff;padding:10px 14px;font-weight:700;cursor:pointer}
-.hero{background:linear-gradient(125deg,#152941 0%,#214967 58%,#087d7d 140%);color:#fff;padding:54px 24px 70px}.hero-inner{max-width:1080px;margin:auto;text-align:center}.eyebrow{text-transform:uppercase;letter-spacing:1.5px;color:#86ddd6;font-size:12px;font-weight:800}.hero h1{font-size:40px;margin:12px auto 10px;max-width:800px}.hero p{color:#d7e3ec;max-width:760px;margin:0 auto 26px;line-height:1.6}.search{max-width:760px;margin:auto;display:flex;background:#fff;padding:8px;border-radius:12px;box-shadow:0 12px 30px #07152255}.search input{border:0;outline:0;flex:1;padding:12px;font-size:16px}.search button{border:0;background:var(--teal);color:#fff;border-radius:8px;padding:0 18px;font-weight:700}
-main{max-width:1180px;margin:-30px auto 60px;padding:0 24px}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:30px}.stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:17px;box-shadow:0 4px 14px #1f30400d}.stat b{display:block;font-size:24px;color:var(--navy)}.stat span{font-size:12px;color:var(--muted)}
-.section-head{display:flex;align-items:end;justify-content:space-between;margin:34px 0 16px}.section-head h2{margin:0;font-size:25px}.section-head p{margin:5px 0 0;color:var(--muted)}
-.hubs{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.hub{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;min-height:210px;cursor:pointer;transition:.2s}.hub:hover{transform:translateY(-4px);box-shadow:0 14px 30px #1f304018}.icon{width:44px;height:44px;border-radius:10px;display:grid;place-items:center;color:#fff;font-weight:900;font-size:20px}.hub h3{margin:18px 0 8px}.hub p{color:var(--muted);font-size:14px;line-height:1.55}.hub a{color:var(--teal);font-weight:700;font-size:13px}.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:15px}.chip{border:1px solid var(--line);background:#fff;border-radius:20px;padding:8px 13px;cursor:pointer}.chip.active{background:var(--navy);color:#fff}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px}.tag{font-size:11px;font-weight:800;text-transform:uppercase;color:var(--teal)}.card h3{font-size:17px;margin:9px 0}.card p{font-size:13px;color:var(--muted);line-height:1.5}.meta{display:flex;justify-content:space-between;border-top:1px solid #edf1f4;padding-top:12px;margin-top:14px;font-size:12px;color:var(--muted)}
-.callout{margin-top:34px;background:#e8f5f4;border:1px solid #acd7d3;border-radius:16px;padding:25px;display:flex;align-items:center;gap:24px}.callout h2{margin:0 0 7px}.callout p{margin:0;color:#52616f}.callout button{margin-left:auto;white-space:nowrap}
-.modal{position:fixed;inset:0;background:#0e1829aa;display:none;align-items:center;justify-content:center;padding:20px;z-index:10}.modal.open{display:flex}.panel{background:#fff;padding:24px;border-radius:14px;max-width:580px;width:100%;max-height:90vh;overflow:auto}.panel h2{margin-top:0}.panel label{display:block;font-size:13px;font-weight:700;margin:13px 0 6px}.panel input,.panel select,.panel textarea{width:100%;padding:11px;border:1px solid var(--line);border-radius:8px}.panel textarea{min-height:110px}.actions{display:flex;justify-content:flex-end;gap:8px;margin-top:18px}.secondary{border:1px solid var(--line);background:#fff;padding:10px 14px;border-radius:8px;cursor:pointer}
-footer{background:#152941;color:#d7e0e9;padding:23px;text-align:center;font-size:12px}@media(max-width:850px){.hubs,.stats{grid-template-columns:repeat(2,1fr)}.grid{grid-template-columns:1fr 1fr}.top nav{display:none}}@media(max-width:560px){.hubs,.stats,.grid{grid-template-columns:1fr}.hero h1{font-size:30px}.callout{display:block}.callout button{margin-top:16px}.search{display:block}.search button{width:100%;height:42px}.stat{display:flex;justify-content:space-between;align-items:center}}
-</style>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header><div class="top"><div class="brand">SP <span>CET</span> Portal</div><nav><a href="#resources">Resources</a><a href="#courses">Courses</a><a href="#practices">Practices</a><a href="#connect">Connect</a></nav><button onclick="openModal()">Post opportunity</button></div></header>
-<section class="hero"><div class="hero-inner"><div class="eyebrow">One shared hub to enable schools</div><h1>Find what you need to plan, design and deliver CET</h1><p>Explore common guidance, discover SP’s CET portfolio, reuse proven practices and connect with schools for collaboration.</p><div class="search"><input id="searchBox" placeholder="Search handbook, courses, practices or opportunities"><button onclick="runSearch()">Search</button></div></div></section>
-<main>
-<div class="stats"><div class="stat"><b id="resourceCount">4</b><span>Resource areas</span></div><div class="stat"><b>12</b><span>Schools represented · sample</span></div><div class="stat"><b>18</b><span>Courses listed · sample</span></div><div class="stat"><b id="opportunityCount">3</b><span>Open opportunities · sample</span></div></div>
-<section id="resources"><div class="section-head"><div><h2>Portal resources</h2><p>Four entry points for SP’s CET community.</p></div></div><div class="hubs">
-<div class="hub" onclick="filterType('handbook')"><div class="icon" style="background:#087d7d">1</div><h3>CET Handbook</h3><p>Common guidance, templates and operating resources for planning, developing and delivering CET.</p><a>Explore handbook →</a></div>
-<div class="hub" id="courses" onclick="filterType('course')"><div class="icon" style="background:#386aa5">2</div><h3>Course Directory</h3><p>Full Qualification programmes and short courses organised by school and capability domain.</p><a>Browse courses →</a></div>
-<div class="hub" id="practices" onclick="filterType('practice')"><div class="icon" style="background:#e9812c">3</div><h3>Best Practices</h3><p>Reusable examples organised by CET archetype, with school-specific cases and lessons learnt.</p><a>View practices →</a></div>
-<div class="hub" id="connect" onclick="filterType('opportunity')"><div class="icon" style="background:#7554a4">4</div><h3>Connect & Collaborate</h3><p>Posts for partnership opportunities, capability requests, resource sharing and CET events.</p><a>Find opportunities →</a></div>
-</div></section>
-<section><div class="section-head"><div><h2>Featured content</h2><p>Demonstration content. Replace with approved SP information.</p></div></div><div class="filters"><button class="chip active" onclick="filterType('all',this)">All</button><button class="chip" onclick="filterType('handbook',this)">Handbook</button><button class="chip" onclick="filterType('course',this)">Courses</button><button class="chip" onclick="filterType('practice',this)">Best practices</button><button class="chip" onclick="filterType('opportunity',this)">Collaboration</button></div><div class="grid" id="contentGrid"></div></section>
-<div class="callout"><div><h2>Have a CET collaboration need or event?</h2><p>Post it for other schools to discover, respond to and build on.</p></div><button class="primary" onclick="openModal()">Create a post</button></div>
+<a class="skip" href="#main">Skip to main content</a>
+
+<!--
+  =====================================================================
+  HOW TO UPDATE THIS PAGE (for non-programmers)
+  - Course, practice, handbook and collaboration CARDS:  edit data/content.json
+  - Page wording (headings, hero text, footer):          edit this file, between the tags
+  - Colours:                                             edit the :root block at the top of styles.css
+  - Handbook landing page:                               edit handbook/index.html
+  Do not change text inside < > brackets unless you know what it does.
+  =====================================================================
+-->
+
+<header>
+  <div class="top">
+    <a class="brand" href="index.html"><img src="assets/favicon.svg" alt="" width="30" height="30"><span class="sr-only">SP CET Portal home</span><span aria-hidden="true">SP <span>CET</span> Portal</span></a>
+    <nav id="siteNav" aria-label="Main">
+      <a href="#resources">Resources</a>
+      <a href="#courses">Courses</a>
+      <a href="#practices">Practices</a>
+      <a href="#connect">Connect</a>
+      <a href="handbook/index.html">Handbook</a>
+    </nav>
+    <button type="button" class="primary" data-open-modal>Post opportunity</button>
+    <button type="button" class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="siteNav">Menu</button>
+  </div>
+</header>
+
+<section class="hero" aria-labelledby="heroTitle">
+  <div class="hero-inner">
+    <div class="eyebrow">One shared hub to enable schools</div>
+    <!-- EDIT: main headline and intro text -->
+    <h1 id="heroTitle">Find what you need to plan, design and deliver CET</h1>
+    <p>Explore common guidance, discover SP’s CET portfolio, reuse proven practices and connect with schools for collaboration.</p>
+    <form class="search" id="searchForm" role="search">
+      <label class="sr-only" for="searchBox">Search the portal</label>
+      <input id="searchBox" type="search" placeholder="Search handbook, courses, practices or opportunities" autocomplete="off">
+      <button class="primary" type="submit">Search</button>
+    </form>
+  </div>
+</section>
+
+<main id="main">
+  <!-- Counts below are calculated automatically from data/content.json -->
+  <ul class="stats" aria-label="Portal summary (sample figures)">
+    <li class="stat"><b id="resourceCount">4</b><span>Resource areas</span></li>
+    <li class="stat"><b id="schoolCount">–</b><span>Schools represented · sample</span></li>
+    <li class="stat"><b id="courseCount">–</b><span>Courses listed · sample</span></li>
+    <li class="stat"><b id="opportunityCount">–</b><span>Open opportunities · sample</span></li>
+  </ul>
+
+  <section id="resources" aria-labelledby="resHead">
+    <div class="section-head"><div><h2 id="resHead">Portal resources</h2><p>Four entry points for SP’s CET community.</p></div></div>
+    <div class="hubs">
+      <a class="hub" href="handbook/index.html"><span class="icon" style="background:#087d7d" aria-hidden="true">1</span><h3>CET Handbook</h3><p>Common guidance, templates and operating resources for planning, developing and delivering CET.</p><span class="go">Explore handbook →</span></a>
+      <button type="button" class="hub" id="courses" data-filter="course"><span class="icon" style="background:#386aa5" aria-hidden="true">2</span><h3>Course Directory</h3><p>Full Qualification programmes and short courses organised by school and capability domain.</p><span class="go">Browse courses →</span></button>
+      <button type="button" class="hub" id="practices" data-filter="practice"><span class="icon" style="background:#e9812c" aria-hidden="true">3</span><h3>Best Practices</h3><p>Reusable examples organised by CET archetype, with school-specific cases and lessons learnt.</p><span class="go">View practices →</span></button>
+      <button type="button" class="hub" id="connect" data-filter="opportunity"><span class="icon" style="background:#7554a4" aria-hidden="true">4</span><h3>Connect &amp; Collaborate</h3><p>Posts for partnership opportunities, capability requests, resource sharing and CET events.</p><span class="go">Find opportunities →</span></button>
+    </div>
+  </section>
+
+  <section id="content" aria-labelledby="featHead">
+    <div class="section-head"><div><h2 id="featHead">Featured content</h2><p>Demonstration content. Replace with approved SP information.</p></div></div>
+    <div class="filters" role="group" aria-label="Filter content by type">
+      <button type="button" class="chip active" data-filter="all" aria-pressed="true">All</button>
+      <button type="button" class="chip" data-filter="handbook" aria-pressed="false">Handbook</button>
+      <button type="button" class="chip" data-filter="course" aria-pressed="false">Courses</button>
+      <button type="button" class="chip" data-filter="practice" aria-pressed="false">Best practices</button>
+      <button type="button" class="chip" data-filter="opportunity" aria-pressed="false">Collaboration</button>
+    </div>
+    <p class="status" id="resultStatus" role="status" aria-live="polite"></p>
+    <div class="grid" id="contentGrid"><p class="empty">Loading content…</p></div>
+  </section>
+
+  <div class="callout">
+    <div><h2>Have a CET collaboration need or event?</h2><p>Post it for other schools to discover, respond to and build on.</p></div>
+    <button type="button" class="primary" data-open-modal>Create a post</button>
+  </div>
 </main>
-<div class="modal" id="modal"><div class="panel"><h2>Post a CET opportunity</h2><p style="color:#667085">Prototype only. Entries are stored in this browser and are not submitted to SP systems.</p><label>Post type</label><select id="postType"><option>Collaboration opportunity</option><option>CET event</option><option>Capability offered</option><option>Resource request</option></select><label>Title</label><input id="postTitle" placeholder="e.g. Looking for a partner in data analytics"><label>School</label><input id="postSchool" placeholder="School or department"><label>Description</label><textarea id="postDesc" placeholder="Describe the opportunity, intended audience and support needed"></textarea><div class="actions"><button class="secondary" onclick="closeModal()">Cancel</button><button class="primary" onclick="savePost()">Publish sample post</button></div></div></div>
+
+<div class="modal" id="modal" hidden>
+  <div class="panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <h2 id="modalTitle">Post a CET opportunity</h2>
+    <p class="note">Prototype only. Entries are stored in this browser and are not submitted to SP systems. Please do not enter personal or restricted information.</p>
+    <form id="postForm" novalidate>
+      <label for="postType">Post type</label>
+      <select id="postType"><option>Collaboration opportunity</option><option>CET event</option><option>Capability offered</option><option>Resource request</option></select>
+      <label for="postTitle">Title</label>
+      <input id="postTitle" required placeholder="e.g. Looking for a partner in data analytics">
+      <label for="postSchool">School</label>
+      <input id="postSchool" required placeholder="School or department">
+      <label for="postDesc">Description</label>
+      <textarea id="postDesc" required placeholder="Describe the opportunity, intended audience and support needed"></textarea>
+      <p class="form-error" id="formError" role="alert"></p>
+      <div class="actions"><button type="button" class="secondary" id="cancelPost">Cancel</button><button type="submit" class="primary">Publish sample post</button></div>
+    </form>
+  </div>
+</div>
+
 <footer>SP CET Portal working prototype · Sample content only · Not connected to production systems</footer>
-<script>
-const items=[
-{type:'handbook',tag:'CET Handbook',title:'Course Development Guide',desc:'Suggested workflow, checkpoints and templates for developing a CET offering.',owner:'CET Enablement',meta:'Guide'},
-{type:'course',tag:'Full Qualification',title:'Specialist Diploma in Digital Solutions',desc:'Sample programme listing showing school, target audience, mode and progression information.',owner:'School A',meta:'Part-time'},
-{type:'course',tag:'Short Course',title:'Applied Generative AI for the Workplace',desc:'Sample short-course listing with learning outcomes, duration and enquiry contact.',owner:'School B',meta:'Short course'},
-{type:'practice',tag:'Archetype: B2B',title:'From company need to customised training',desc:'A reusable case structure covering discovery, co-design, delivery and follow-up.',owner:'School C',meta:'B2B'},
-{type:'practice',tag:'School-specific practice',title:'Adult learner onboarding checklist',desc:'A practical checklist to improve pre-course communication and learner readiness.',owner:'School D',meta:'Learner experience'},
-{type:'opportunity',tag:'Collaboration opportunity',title:'Cross-school sustainability programme',desc:'Seeking complementary capabilities to develop an interdisciplinary CET offering.',owner:'School E',meta:'Open'},
-{type:'opportunity',tag:'CET event',title:'CET Community Sharing Session',desc:'A sample event post for sharing delivery practices and reusable resources.',owner:'CET Community',meta:'Event'},
-{type:'opportunity',tag:'Capability offered',title:'Simulation-based learning support',desc:'Capability available to support scenario design for suitable CET courses.',owner:'School F',meta:'Capability'}];
-let current=[...items];
-function render(list){document.getElementById('contentGrid').innerHTML=list.map(x=>`<article class="card"><div class="tag">${x.tag}</div><h3>${x.title}</h3><p>${x.desc}</p><div class="meta"><span>${x.owner}</span><b>${x.meta}</b></div></article>`).join('')||'<p>No matching items found.</p>'}
-function filterType(type,btn){document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));if(btn)btn.classList.add('active');current=type==='all'?items:items.filter(x=>x.type===type);render(current);document.getElementById('contentGrid').scrollIntoView({behavior:'smooth',block:'center'})}
-function runSearch(){const q=document.getElementById('searchBox').value.toLowerCase().trim();render(items.filter(x=>Object.values(x).join(' ').toLowerCase().includes(q)));document.getElementById('contentGrid').scrollIntoView({behavior:'smooth'})}
-document.getElementById('searchBox').addEventListener('keydown',e=>{if(e.key==='Enter')runSearch()});
-function openModal(){document.getElementById('modal').classList.add('open')}function closeModal(){document.getElementById('modal').classList.remove('open')}
-function savePost(){const title=document.getElementById('postTitle').value.trim(),school=document.getElementById('postSchool').value.trim(),desc=document.getElementById('postDesc').value.trim();if(!title||!school||!desc){alert('Please complete the title, school and description.');return}items.unshift({type:'opportunity',tag:document.getElementById('postType').value,title,desc,owner:school,meta:'New'});localStorage.setItem('cetPosts',JSON.stringify(items.filter(x=>x.meta==='New')));document.getElementById('opportunityCount').textContent=items.filter(x=>x.type==='opportunity').length;render(items);closeModal();}
-try{(JSON.parse(localStorage.getItem('cetPosts'))||[]).reverse().forEach(x=>items.unshift(x))}catch(e){};document.getElementById('opportunityCount').textContent=items.filter(x=>x.type==='opportunity').length;render(items);
-</script>
-</body></html>
+<script src="app.js"></script>
+</body>
+</html>

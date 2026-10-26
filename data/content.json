@@ -1,0 +1,87 @@
+{
+  "_readme": "HOW TO UPDATE: add, edit or delete records in the 'items' list below. Copy an existing record (from { to }), keep the commas between records, and keep the quotation marks. Fields: id (unique, no spaces), type (handbook | course | practice | opportunity), tag (small label above the title), title, desc (short description), owner (school or unit), meta (small label at bottom right), link (optional page address), sample (true = shows a SAMPLE badge; set to false or remove only once the record is approved SP information). Validate your edit at https://jsonlint.com before saving.",
+  "schools": ["School A", "School B", "School C", "School D", "School E", "School F"],
+  "items": [
+    {
+      "id": "hb-001",
+      "type": "handbook",
+      "tag": "CET Handbook",
+      "title": "Course Development Guide",
+      "desc": "Suggested workflow, checkpoints and templates for developing a CET offering.",
+      "owner": "CET Enablement",
+      "meta": "Guide",
+      "link": "handbook/index.html",
+      "sample": true
+    },
+    {
+      "id": "crs-001",
+      "type": "course",
+      "tag": "Full Qualification",
+      "title": "Specialist Diploma in Digital Solutions",
+      "desc": "Sample programme listing showing school, target audience, mode and progression information.",
+      "owner": "School A",
+      "meta": "Part-time",
+      "sample": true
+    },
+    {
+      "id": "crs-002",
+      "type": "course",
+      "tag": "Short Course",
+      "title": "Applied Generative AI for the Workplace",
+      "desc": "Sample short-course listing with learning outcomes, duration and enquiry contact.",
+      "owner": "School B",
+      "meta": "Short course",
+      "sample": true
+    },
+    {
+      "id": "bp-001",
+      "type": "practice",
+      "tag": "Archetype: B2B",
+      "title": "From company need to customised training",
+      "desc": "A reusable case structure covering discovery, co-design, delivery and follow-up.",
+      "owner": "School C",
+      "meta": "B2B",
+      "sample": true
+    },
+    {
+      "id": "bp-002",
+      "type": "practice",
+      "tag": "School-specific practice",
+      "title": "Adult learner onboarding checklist",
+      "desc": "A practical checklist to improve pre-course communication and learner readiness.",
+      "owner": "School D",
+      "meta": "Learner experience",
+      "sample": true
+    },
+    {
+      "id": "opp-001",
+      "type": "opportunity",
+      "tag": "Collaboration opportunity",
+      "title": "Cross-school sustainability programme",
+      "desc": "Seeking complementary capabilities to develop an interdisciplinary CET offering.",
+      "owner": "School E",
+      "meta": "Open",
+      "sample": true
+    },
+    {
+      "id": "opp-002",
+      "type": "opportunity",
+      "tag": "CET event",
+      "title": "CET Community Sharing Session",
+      "desc": "A sample event post for sharing delivery practices and reusable resources.",
+      "owner": "CET Community",
+      "meta": "Event",
+      "sample": true
+    },
+    {
+      "id": "opp-003",
+      "type": "opportunity",
+      "tag": "Capability offered",
+      "title": "Simulation-based learning support",
+      "desc": "Capability available to support scenario design for suitable CET courses.",
+      "owner": "School F",
+      "meta": "Capability",
+      "sample": true
+    }
+  ]
+}
