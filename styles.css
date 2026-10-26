@@ -134,3 +134,36 @@ main{padding:0 16px}
 .actions button{width:100%}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hub{transition:none}.hub:hover{transform:none}}
+
+/* Course applications page */
+.role-bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:20px}
+.role-bar label{font-weight:700;font-size:14px}
+.role-bar select{padding:9px 10px;border:1px solid #bdb7b8;border-radius:8px;font:inherit;background:#fff}
+.app-form{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px}
+.app-form label{display:block;font-size:13px;font-weight:700;margin:13px 0 6px}
+.app-form input:not([type=file]),.app-form select,.app-form textarea{width:100%;padding:11px;border:1px solid #bdb7b8;border-radius:8px;font:inherit;font-size:15px;color:var(--text);background:#fff}
+.app-form textarea{min-height:90px;resize:vertical}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+fieldset.docs{border:1px solid var(--line);border-radius:10px;margin:18px 0 0;padding:6px 16px 14px}
+fieldset.docs legend{font-weight:700;font-size:14px;padding:0 6px}
+.doc-row input[type=file]{font-size:14px;max-width:100%}
+.req{color:var(--red-dark);font-weight:700}.opt{color:var(--muted);font-weight:400}
+.app-list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.app-card h3{margin:9px 0}
+.meta-line{margin-top:6px!important}
+.pill{font-size:11px;font-weight:800;border-radius:12px;padding:3px 10px;border:1px solid var(--line);background:#f1eeee;color:var(--ink);white-space:nowrap}
+.pill.s-submitted,.pill.s-review{background:#fdf1e4;border-color:#f3cfa4;color:#6b3a08}
+.pill.s-approved{background:#e7f4ea;border-color:#a9d3b3;color:#17542a}
+.pill.s-returned{background:#fff6e0;border-color:#ecd28a;color:#5f4500}
+.pill.s-rejected{background:#fdecee;border-color:#f0b4bc;color:#8a0c22}
+.doc-list{list-style:none;margin:12px 0 0;padding:0;font-size:13px;color:var(--text)}
+.doc-list li{padding:3px 0}.doc-list .ok{color:#17542a;font-weight:800}.doc-list .miss{color:var(--muted)}
+.app-card details{margin-top:12px;font-size:13px}
+.app-card summary{cursor:pointer;font-weight:700;color:var(--red-dark)}
+.history{margin:8px 0 0;padding-left:18px;color:var(--muted)}.history li{margin-bottom:8px}.history .note{color:var(--text)}
+.decision{border-top:1px solid #eeebeb;margin-top:14px;padding-top:12px}
+.decision label{display:block;font-size:13px;font-weight:700;margin:0 0 6px}
+.decision textarea{width:100%;min-height:70px;padding:10px;border:1px solid #bdb7b8;border-radius:8px;font:inherit;font-size:14px}
+.decision .actions{flex-wrap:wrap}
+@media(max-width:900px){.app-list{grid-template-columns:1fr}}
+@media(max-width:560px){.form-grid{grid-template-columns:1fr}.decision .actions button{width:100%}}

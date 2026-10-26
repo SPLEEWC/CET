@@ -1,0 +1,69 @@
+{
+  "_readme": "HOW TO UPDATE: 'documents' lists the files an applicant must attach (required: true = must be attached before submitting). 'schools' fills the School drop-down. 'courseTypes' fills the Course type drop-down. 'items' are SAMPLE applications shown on first load; copy a record to add another. All records here are demonstration data - do not add real names or restricted information. Validate edits at https://jsonlint.com.",
+  "schools": ["School A", "School B", "School C", "School D", "School E", "School F"],
+  "courseTypes": ["Full Qualification", "Short course"],
+  "documents": [
+    { "key": "proposal", "label": "Course proposal", "required": true },
+    { "key": "outline", "label": "Curriculum outline", "required": true },
+    { "key": "budget", "label": "Budget and fee schedule", "required": true },
+    { "key": "support", "label": "Supporting documents (e.g. industry endorsement)", "required": false }
+  ],
+  "items": [
+    {
+      "id": "APP-S001",
+      "sample": true,
+      "title": "Sample: Applied Data Analytics for Professionals",
+      "courseType": "Short course",
+      "school": "School A",
+      "submittedBy": "Course Manager (sample)",
+      "summary": "Sample application showing a short course proposal awaiting review.",
+      "status": "submitted",
+      "files": {
+        "proposal": "sample-proposal.pdf",
+        "outline": "sample-outline.docx",
+        "budget": "sample-budget.xlsx"
+      },
+      "history": [
+        { "at": "2026-10-01T09:00:00+08:00", "by": "Submitter", "action": "Submitted", "note": "Sample record." }
+      ]
+    },
+    {
+      "id": "APP-S002",
+      "sample": true,
+      "title": "Sample: Specialist Diploma in Sustainable Operations",
+      "courseType": "Full Qualification",
+      "school": "School B",
+      "submittedBy": "Programme Lead (sample)",
+      "summary": "Sample application returned to the applicant for changes.",
+      "status": "returned",
+      "files": {
+        "proposal": "sample-proposal.pdf",
+        "outline": "sample-outline.pdf"
+      },
+      "history": [
+        { "at": "2026-09-24T10:30:00+08:00", "by": "Submitter", "action": "Submitted", "note": "Sample record." },
+        { "at": "2026-09-30T15:00:00+08:00", "by": "Approver", "action": "Returned for changes", "note": "Sample comment: please attach the budget and fee schedule." }
+      ]
+    },
+    {
+      "id": "APP-S003",
+      "sample": true,
+      "title": "Sample: Workplace Communication Essentials",
+      "courseType": "Short course",
+      "school": "School C",
+      "submittedBy": "Course Manager (sample)",
+      "summary": "Sample application that has been approved.",
+      "status": "approved",
+      "files": {
+        "proposal": "sample-proposal.pdf",
+        "outline": "sample-outline.pdf",
+        "budget": "sample-budget.xlsx",
+        "support": "sample-endorsement.pdf"
+      },
+      "history": [
+        { "at": "2026-09-10T11:00:00+08:00", "by": "Submitter", "action": "Submitted", "note": "Sample record." },
+        { "at": "2026-09-15T14:00:00+08:00", "by": "Approver", "action": "Approved", "note": "Sample approval." }
+      ]
+    }
+  ]
+}
