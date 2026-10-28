@@ -2,7 +2,7 @@
   SP CET Portal – applications.js (course document applications and approvals)
   ----------------------------------------------------------------------
   WHERE TO UPDATE CONTENT (no programming needed):
-    * Required documents, schools, course types, sample applications: data/applications.json
+    * Required documents, schools, course types, example applications: data/applications.json
     * Page wording: applications/index.html
   PROTOTYPE: records live in this browser only (localStorage); files are not uploaded.
   ----------------------------------------------------------------------
@@ -74,7 +74,7 @@
     return '';
   }
   function newId() {
-    var n = 1000 + all().filter(function (x) { return !x.sample; }).length + 1;
+    var n = 1000 + all().length + 1;
     return 'APP-' + n + '-' + Date.now().toString(36).slice(-3).toUpperCase();
   }
 
@@ -145,7 +145,7 @@
     }).join('');
     return '<article class="card app-card" id="' + esc(rec.id) + '"><div class="card-top"><div class="tag">' + esc(rec.courseType) + ' · ' + esc(rec.school) + '</div>' +
       '<span class="pill s-' + esc(rec.status) + '">' + esc(STATUS[rec.status] || rec.status) + '</span></div>' +
-      '<h3>' + esc(rec.title) + (rec.sample ? ' <span class="badge">Sample</span>' : '') + '</h3>' +
+      '<h3>' + esc(rec.title) + '</h3>' +
       '<p>' + esc(rec.summary) + '</p><p class="meta-line">Ref ' + esc(rec.id) + ' · Submitted by ' + esc(rec.submittedBy) + '</p>' +
       docsHtml(rec) +
       '<details><summary>History (' + (rec.history || []).length + ')</summary><ol class="history">' + hist + '</ol></details>' +
@@ -213,7 +213,7 @@
       if (f) files[inp.getAttribute('data-doc')] = f.name;
     });
     if (bad) { err.textContent = bad; return; }
-    var rec = { id: newId(), sample: false, title: title, courseType: $('fType').value, school: $('fSchool').value, submittedBy: by, summary: summary, status: 'submitted', files: files,
+    var rec = { id: newId(), title: title, courseType: $('fType').value, school: $('fSchool').value, submittedBy: by, summary: summary, status: 'submitted', files: files,
       history: [{ at: new Date().toISOString(), by: 'Submitter', action: 'Submitted', note: '' }] };
     var miss = missingRequired(rec);
     if (miss.length) { err.textContent = 'Please attach the required documents: ' + miss.map(function (d) { return d.label; }).join(', ') + '.'; return; }
@@ -244,7 +244,7 @@
       render();
     });
     $('resetBtn').addEventListener('click', function () {
-      if (!confirm('Remove all applications and decisions saved in this browser and restore the sample data?')) return;
+      if (!confirm('Remove all applications and decisions saved in this browser and restore the original data?')) return;
       try { localStorage.removeItem(STORE_KEY); } catch (x) { /* ignore */ }
       local = []; filter = 'all'; render();
     });
