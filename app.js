@@ -47,8 +47,7 @@
 
   function cardHtml(x) {
     var link = safeLink(x.link);
-    var badge = x.sample ? '<span class="badge">Sample</span>' : (x.isPost ? '<span class="badge new">Sample post</span>' : '');
-    return '<article class="card"><div class="card-top"><div class="tag">' + esc(x.tag) + '</div>' + badge + '</div>' +
+    return '<article class="card"><div class="card-top"><div class="tag">' + esc(x.tag) + '</div></div>' +
       '<h3>' + esc(x.title) + '</h3><p>' + esc(x.desc) + '</p>' +
       (link ? '<a class="more" href="' + esc(link) + '">Open resource →</a>' : '') +
       '<div class="meta"><span>' + esc(x.owner) + '</span><b>' + esc(x.meta) + '</b></div></article>';
