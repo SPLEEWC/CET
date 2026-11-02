@@ -49,9 +49,6 @@ main{max-width:1180px;margin:-30px auto 60px;padding:0 24px}
 .hubs{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 .hub{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;min-height:190px;transition:.2s;display:flex;flex-direction:column;align-items:flex-start;text-align:left;font:inherit;color:inherit;text-decoration:none;cursor:pointer}
 .hub:hover{transform:translateY(-4px);box-shadow:0 14px 30px #2b272818}
-.hub-head{display:flex;align-items:center;gap:12px}
-.hub-head .num{font-size:34px;font-weight:800;line-height:1;color:var(--red)}
-.hub-head .num::after{content:"";display:inline-block;width:14px;height:2px;background:var(--line);vertical-align:middle;margin-left:12px}
 .icon{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--red)}
 .icon img{display:block}
 .hub h3{margin:18px 0 8px;color:var(--ink);font-size:18px}
