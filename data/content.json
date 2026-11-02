@@ -1,6 +1,13 @@
 {
-  "_readme": "HOW TO UPDATE: add, edit or delete records in the 'items' list below. Copy an existing record (from { to }), keep the commas between records, and keep the quotation marks. Fields: id (unique, no spaces), type (handbook | course | practice | opportunity), tag (small label above the title), title, desc (short description), owner (school or unit), meta (small label at bottom right), link (optional page address). Validate your edit at https://jsonlint.com before saving.",
-  "schools": ["School A", "School B", "School C", "School D", "School E", "School F"],
+  "_readme": "HOW TO UPDATE: add, edit or delete records in the 'items' list below. Copy an existing record (from { to }), keep the commas between records, and keep the quotation marks. Fields: id (unique, no spaces), type (handbook | template | practice | course | adjunct | person | policy | opportunity), tag (small label above the title), title, desc (short description), owner (school or unit), meta (small label at bottom right), link (optional page address). Validate your edit at https://jsonlint.com before saving.",
+  "schools": [
+    "School A",
+    "School B",
+    "School C",
+    "School D",
+    "School E",
+    "School F"
+  ],
   "items": [
     {
       "id": "hb-001",
@@ -74,6 +81,115 @@
       "desc": "Capability available to support scenario design for suitable CET courses.",
       "owner": "School F",
       "meta": "Capability"
+    },
+    {
+      "id": "hb-002",
+      "type": "handbook",
+      "tag": "CET Handbook",
+      "title": "Funding rules and processes",
+      "desc": "Summary of funding rules and the processes for claiming and reporting. Content to be confirmed by PACE.",
+      "owner": "PACE",
+      "meta": "Policy",
+      "link": "handbook/index.html"
+    },
+    {
+      "id": "tpl-001",
+      "type": "template",
+      "tag": "Templates & Forms",
+      "title": "Course proposal template",
+      "desc": "Template for proposing a new CET offering for review.",
+      "owner": "PACE",
+      "meta": "Template"
+    },
+    {
+      "id": "tpl-002",
+      "type": "template",
+      "tag": "Templates & Forms",
+      "title": "Lesson plan and assessment plan templates",
+      "desc": "Templates for planning lessons and assessments.",
+      "owner": "PACE",
+      "meta": "Template"
+    },
+    {
+      "id": "tpl-003",
+      "type": "template",
+      "tag": "Templates & Forms",
+      "title": "Claims form guide",
+      "desc": "Step-by-step guide to preparing claims.",
+      "owner": "PACE",
+      "meta": "Form"
+    },
+    {
+      "id": "tpl-004",
+      "type": "template",
+      "tag": "Templates & Forms",
+      "title": "Learner onboarding pack",
+      "desc": "Pre-course communication pack for adult learners.",
+      "owner": "PACE",
+      "meta": "Pack"
+    },
+    {
+      "id": "adj-001",
+      "type": "adjunct",
+      "tag": "Adjunct Pool",
+      "title": "Adjunct educator, digital skills (anonymised)",
+      "desc": "Profile drawn from the National Adult Educator Registry, shared across schools. Scores and contact details are visible to approved roles only.",
+      "owner": "Adjunct Pool",
+      "meta": "Shared pool"
+    },
+    {
+      "id": "adj-002",
+      "type": "adjunct",
+      "tag": "Adjunct Pool",
+      "title": "Adjunct educator, sustainability (anonymised)",
+      "desc": "Profile drawn from the National Adult Educator Registry, shared across schools. Scores and contact details are visible to approved roles only.",
+      "owner": "Adjunct Pool",
+      "meta": "Shared pool"
+    },
+    {
+      "id": "ppl-001",
+      "type": "person",
+      "tag": "People Directory",
+      "title": "School CET contact",
+      "desc": "Contact for CET matters in the school. Details are listed in the staff directory.",
+      "owner": "School A",
+      "meta": "School contact"
+    },
+    {
+      "id": "ppl-002",
+      "type": "person",
+      "tag": "People Directory",
+      "title": "PACE account manager",
+      "desc": "Account manager supporting schools with CET enquiries. Details are listed in the staff directory.",
+      "owner": "PACE",
+      "meta": "Account manager"
+    },
+    {
+      "id": "pol-001",
+      "type": "policy",
+      "tag": "MOE Policy Updates",
+      "title": "SWDA regulation updates",
+      "desc": "Summary of regulation changes affecting CET. To be added by PACE once approved.",
+      "owner": "PACE",
+      "meta": "Update"
+    },
+    {
+      "id": "pol-002",
+      "type": "policy",
+      "tag": "MOE Policy Updates",
+      "title": "SCTP procurement tips",
+      "desc": "Practical tips for procurement under SCTP. To be added by PACE once approved.",
+      "owner": "PACE",
+      "meta": "Tips"
+    },
+    {
+      "id": "pol-003",
+      "type": "policy",
+      "tag": "MOE Policy Updates",
+      "title": "Key dates calendar",
+      "desc": "Upcoming key dates for CET planning and submissions. To be added by PACE once approved.",
+      "owner": "PACE",
+      "meta": "Calendar"
     }
   ]
 }

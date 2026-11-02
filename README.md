@@ -19,7 +19,7 @@ No React, Node.js, npm or build step is used: it is plain HTML, CSS and JavaScri
 | `styles.css` | Look and feel. SP red/charcoal colours are at the top (`:root`) |
 | `app.js` | Loads `data/content.json`, search, filters and the post form |
 | `data/content.json` | **All cards** (handbook, courses, practices, opportunities) |
-| `handbook/index.html` | CET Handbook landing page |
+| `handbook/index.html` | CET Handbook landing page, with a keyword "Ask the handbook" assistant (`assistant.js`) |
 | `applications/` | Course document application and approval prototype (`index.html`, `applications.js`) |
 | `data/applications.json` | Required documents, schools, course types and example applications |
 | `assets/` | Images and icons (`favicon.svg`) |
@@ -42,7 +42,7 @@ Open `data/content.json` and edit the `items` list. Each record looks like this:
 }
 ```
 
-- `type` must be one of `handbook`, `course`, `practice`, `opportunity`.
+- `type` must be one of `handbook`, `template`, `practice`, `course`, `adjunct`, `person`, `policy`, `opportunity` (these match the eight portal areas).
 - Copy a whole record (from `{` to `}`), keep a comma between records, and keep the quotation marks.
 - `link` is optional (relative page or `https://` address).
 - Check your edit at <https://jsonlint.com> before saving. A mistake shows an error message on the page instead of the cards.
@@ -79,3 +79,10 @@ then open <http://localhost:8000>.
 4. The site appears at `https://<owner>.github.io/<repo>/` within a few minutes.
 
 All links are relative, so the site works under the repository sub-path.
+
+## Portal areas
+The home page shows eight areas: Handbook & Chatbot, Templates & Forms, Best Practices, Course Directory, Adjunct Pool, People Directory, MOE Policy Updates, and Connect & Collaborate.
+
+- Adjunct Pool and People Directory entries are anonymised placeholders. **Do not publish names, contact details, registry data or TRAQOM scores in this static site**: that information must sit behind role-based access in the production Staff Portal.
+- The "Ask the handbook" assistant is a keyword search, not an AI chatbot.
+- The design intent is for the production portal to be built on SharePoint under the existing Staff Portal, managed by PACE with an owner per area. This repository is a static design prototype of that experience and does not enforce access control.

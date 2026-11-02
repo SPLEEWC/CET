@@ -47,9 +47,9 @@ main{max-width:1180px;margin:-30px auto 60px;padding:0 24px}
 
 /* Resource hubs */
 .hubs{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.hub{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;min-height:210px;transition:.2s;display:flex;flex-direction:column;align-items:flex-start;text-align:left;font:inherit;color:inherit;text-decoration:none;cursor:pointer}
+.hub{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;min-height:190px;transition:.2s;display:flex;flex-direction:column;align-items:flex-start;text-align:left;font:inherit;color:inherit;text-decoration:none;cursor:pointer}
 .hub:hover{transform:translateY(-4px);box-shadow:0 14px 30px #2b272818}
-.icon{width:44px;height:44px;border-radius:10px;display:grid;place-items:center;color:#fff;font-weight:900;font-size:20px}
+.icon{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:900;font-size:20px;background:var(--red)}
 .hub h3{margin:18px 0 8px;color:var(--ink);font-size:18px}
 .hub p{color:var(--muted);font-size:14px;line-height:1.55;margin:0 0 14px}
 .hub .go{color:var(--red-dark);font-weight:700;font-size:13px;margin-top:auto}
@@ -165,3 +165,16 @@ fieldset.docs legend{font-weight:700;font-size:14px;padding:0 6px}
 .decision .actions{flex-wrap:wrap}
 @media(max-width:900px){.app-list{grid-template-columns:1fr}}
 @media(max-width:560px){.form-grid{grid-template-columns:1fr}.decision .actions button{width:100%}}
+
+/* Portal information strip and banner */
+.strip{list-style:none;margin:16px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.strip li{background:#fdecee;border:1px solid #f0b4bc;border-radius:10px;padding:14px 16px;font-size:14px}
+.strip b{display:block;color:var(--red-dark);font-size:12px;letter-spacing:.8px;text-transform:uppercase;margin-bottom:2px}
+.banner{background:var(--ink);color:#fff;text-align:center;font-weight:700;padding:18px 20px;border-radius:10px;margin:34px 0 0}
+.assistant{background:#fff;border:1px solid var(--line);border-radius:14px;padding:22px;margin-bottom:28px}
+.assistant form{display:flex;gap:8px}
+.assistant input{flex:1;min-width:0;padding:12px;border:1px solid #bdb7b8;border-radius:8px;font:inherit;font-size:16px}
+.assistant .answer{margin-top:14px}
+.assistant .answer ul{margin:8px 0 0;padding-left:20px}
+@media(max-width:900px){.strip{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.strip{grid-template-columns:1fr}.assistant form{flex-direction:column}}

@@ -36,13 +36,24 @@
 <section class="page-hero" aria-labelledby="pageTitle">
   <div class="hero-inner">
     <div class="eyebrow">Resource area 1</div>
-    <h1 id="pageTitle">CET Handbook</h1>
+    <h1 id="pageTitle">CET Handbook &amp; Chatbot</h1>
     <p>Common guidance, templates and operating resources for planning, developing and delivering CET. This landing page shows the intended structure; handbook content is to be added once approved.</p>
   </div>
 </section>
 
 <main id="main">
   <p class="notice"><strong>Placeholder structure only.</strong> The topics below are placeholders to illustrate layout. They are not official SP policy or guidance.</p>
+
+  <section class="assistant" aria-labelledby="askHead">
+    <h2 id="askHead">Ask the handbook</h2>
+    <p>Type a question or keywords, for example “claims” or “course proposal”. This is a keyword search over handbook, template and policy entries, not an AI chatbot.</p>
+    <form id="askForm">
+      <label class="sr-only" for="askBox">Your question</label>
+      <input id="askBox" type="search" placeholder="e.g. how do I submit a claim?" autocomplete="off">
+      <button class="primary" type="submit">Ask</button>
+    </form>
+    <div class="answer" id="answer" role="status" aria-live="polite"></div>
+  </section>
 
   <section aria-labelledby="topics">
     <div class="section-head"><div><h2 id="topics">Handbook topics</h2><p>Select a topic once its content has been published.</p></div></div>
@@ -61,5 +72,6 @@
 </main>
 
 <footer>SP CET Portal working prototype · Not connected to production systems</footer>
+<script src="assistant.js"></script>
 </body>
 </html>

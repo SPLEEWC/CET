@@ -55,20 +55,31 @@
 <main id="main">
   <!-- Counts below are calculated automatically from data/content.json -->
   <ul class="stats" aria-label="Portal summary">
-    <li class="stat"><span>Resource areas</span><b id="resourceCount">4</b></li>
+    <li class="stat"><span>Resource areas</span><b id="resourceCount">8</b></li>
     <li class="stat"><span>Schools represented</span><b id="schoolCount">–</b></li>
     <li class="stat"><span>Courses listed</span><b id="courseCount">–</b></li>
     <li class="stat"><span>Open opportunities</span><b id="opportunityCount">–</b></li>
   </ul>
 
   <section id="resources" aria-labelledby="resHead">
-    <div class="section-head"><div><h2 id="resHead">Portal resources</h2><p>Four entry points for SP’s CET community.</p></div></div>
+    <div class="section-head"><div><h2 id="resHead">Portal resources</h2><p>One front door for everyone teaching CET at SP, managed by PACE.</p></div></div>
     <div class="hubs">
-      <a class="hub" href="handbook/index.html"><span class="icon" style="background:#c8102e" aria-hidden="true">1</span><h3>CET Handbook</h3><p>Common guidance, templates and operating resources for planning, developing and delivering CET.</p><span class="go">Explore handbook →</span></a>
-      <button type="button" class="hub" id="courses" data-filter="course"><span class="icon" style="background:#231f20" aria-hidden="true">2</span><h3>Course Directory</h3><p>Full Qualification programmes and short courses organised by school and capability domain.</p><span class="go">Browse courses →</span></button>
-      <button type="button" class="hub" id="practices" data-filter="practice"><span class="icon" style="background:#c25e0c" aria-hidden="true">3</span><h3>Best Practices</h3><p>Reusable examples organised by CET archetype, with school-specific cases and lessons learnt.</p><span class="go">View practices →</span></button>
-      <button type="button" class="hub" id="connect" data-filter="opportunity"><span class="icon" style="background:#6d6768" aria-hidden="true">4</span><h3>Connect &amp; Collaborate</h3><p>Posts for partnership opportunities, capability requests, resource sharing and CET events.</p><span class="go">Find opportunities →</span></button>
+      <a class="hub" href="handbook/index.html"><span class="icon" aria-hidden="true">1</span><h3>Handbook &amp; Chatbot</h3><p>Policies, funding rules and processes, with a keyword assistant for routine queries.</p><span class="go">Explore handbook →</span></a>
+      <button type="button" class="hub" data-filter="template"><span class="icon" aria-hidden="true">2</span><h3>Templates &amp; Forms</h3><p>Course proposals, lesson and assessment plans, claims and the learner onboarding pack.</p><span class="go">Find templates →</span></button>
+      <button type="button" class="hub" id="practices" data-filter="practice"><span class="icon" aria-hidden="true">3</span><h3>Best Practices</h3><p>Searchable by school or topic, organised by CET archetype.</p><span class="go">View practices →</span></button>
+      <button type="button" class="hub" id="courses" data-filter="course"><span class="icon" aria-hidden="true">4</span><h3>Course Directory</h3><p>CET courses by school, with owners and upcoming runs.</p><span class="go">Browse courses →</span></button>
+      <button type="button" class="hub" data-filter="adjunct"><span class="icon" aria-hidden="true">5</span><h3>Adjunct Pool</h3><p>Adjunct educators shared across schools. Sensitive details visible by role only.</p><span class="go">View adjunct pool →</span></button>
+      <button type="button" class="hub" data-filter="person"><span class="icon" aria-hidden="true">6</span><h3>People Directory</h3><p>School CET contacts and PACE account managers.</p><span class="go">Find contacts →</span></button>
+      <button type="button" class="hub" data-filter="policy"><span class="icon" aria-hidden="true">7</span><h3>MOE Policy Updates</h3><p>Regulation updates, procurement tips and key dates.</p><span class="go">See updates →</span></button>
+      <button type="button" class="hub" id="connect" data-filter="opportunity"><span class="icon" aria-hidden="true">8</span><h3>Connect &amp; Collaborate</h3><p>Post requests for cross-school expertise, partnerships, resources and CET events.</p><span class="go">Find opportunities →</span></button>
     </div>
+    <!-- EDIT: the four information boxes below -->
+    <ul class="strip" aria-label="About the portal">
+      <li><b>Who</b> CET lecturers and above, and adjuncts</li>
+      <li><b>Managed by</b> PACE, with an owner per area</li>
+      <li><b>Access</b> Sensitive data by role only</li>
+      <li><b>Built on</b> SharePoint, under the existing Staff Portal</li>
+    </ul>
   </section>
 
   <section id="content" aria-labelledby="featHead">
@@ -76,8 +87,12 @@
     <div class="filters" role="group" aria-label="Filter content by type">
       <button type="button" class="chip active" data-filter="all" aria-pressed="true">All</button>
       <button type="button" class="chip" data-filter="handbook" aria-pressed="false">Handbook</button>
-      <button type="button" class="chip" data-filter="course" aria-pressed="false">Courses</button>
+      <button type="button" class="chip" data-filter="template" aria-pressed="false">Templates</button>
       <button type="button" class="chip" data-filter="practice" aria-pressed="false">Best practices</button>
+      <button type="button" class="chip" data-filter="course" aria-pressed="false">Courses</button>
+      <button type="button" class="chip" data-filter="adjunct" aria-pressed="false">Adjunct pool</button>
+      <button type="button" class="chip" data-filter="person" aria-pressed="false">People</button>
+      <button type="button" class="chip" data-filter="policy" aria-pressed="false">Policy updates</button>
       <button type="button" class="chip" data-filter="opportunity" aria-pressed="false">Collaboration</button>
     </div>
     <p class="status" id="resultStatus" role="status" aria-live="polite"></p>
@@ -93,6 +108,7 @@
     <div><h2>Have a CET collaboration need or event?</h2><p>Post it for other schools to discover, respond to and build on.</p></div>
     <button type="button" class="primary" data-open-modal>Create a post</button>
   </div>
+  <p class="banner">If it is not on the portal, it is not current: one source of truth for CET at SP.</p>
 </main>
 
 <div class="modal" id="modal" hidden>

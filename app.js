@@ -62,7 +62,7 @@
   function updateStats() {
     var items = allItems();
     var schools = {};
-    items.forEach(function (x) { if (x.type !== 'handbook' && x.owner) schools[x.owner] = true; });
+    items.forEach(function (x) { if (/^School /.test(x.owner || '')) schools[x.owner] = true; });
     $('schoolCount').textContent = Object.keys(schools).length;
     $('courseCount').textContent = items.filter(function (x) { return x.type === 'course'; }).length;
     $('opportunityCount').textContent = items.filter(function (x) { return x.type === 'opportunity'; }).length;
