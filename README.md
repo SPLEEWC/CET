@@ -22,7 +22,7 @@ No React, Node.js, npm or build step is used: it is plain HTML, CSS and JavaScri
 | `handbook/index.html` | CET Handbook landing page, with a keyword "Ask the handbook" assistant (`assistant.js`) |
 | `applications/` | Course document application and approval prototype (`index.html`, `applications.js`) |
 | `data/applications.json` | Required documents, schools, course types and example applications |
-| `assets/` | Images and icons (`favicon.svg`) |
+| `assets/` | Images and icons (`favicon.svg`; `icons/` holds the eight portal-area icons, white line art) |
 
 ## Updating content (no programming needed)
 
